@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="styles/site.css"/>    
+</head>
+
+<body>
+    <input type="text" id="pinTextbox" placeholder="pin">
+    <button id="joinButton">Join</button>
+    <br>
+    <br>
+    <input type="text" id="nameTextbox" placeholder="name">
+    <button id="submitButton">Submit</button>
+    <br>
+    <br>
+    <label id="statusLabel">Enter Game Pin to join...</label>
+    <br>
+    <br>
+    <button id="a1">1</button>
+    <button id="a2">2</button>
+    <button id="a3">3</button>
+    <button id="a4">4</button>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Authentication Library for Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <!-- Database Library for Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyCYVrGcmSuM1DpVfpF32eLCj9FYCTk8RC8",
+          authDomain: "triviaapp-8d3b9.firebaseapp.com",
+          databaseURL: "https://triviaapp-8d3b9.firebaseio.com",
+          projectId: "triviaapp-8d3b9",
+          storageBucket: "triviaapp-8d3b9.appspot.com",
+          messagingSenderId: "823199186177",
+          appId: "1:823199186177:web:de0851257e611d07a8ef00"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
