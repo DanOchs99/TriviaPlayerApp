@@ -7,6 +7,7 @@ const a1 = document.getElementById('a1');
 const a2 = document.getElementById('a2');
 const a3 = document.getElementById('a3');
 const a4 = document.getElementById('a4');
+const imgDiv = document.getElementById('image-div');
 
 let pin = '';
 let gameRef = {};
@@ -61,10 +62,12 @@ submitButton.addEventListener('click', ()=>{
     a2.style.display = 'none';
     a3.style.display = 'none';
     a4.style.display = 'none';
-    a1.style.backgroundColor = 'steelblue';
-    a2.style.backgroundColor = 'steelblue';
-    a3.style.backgroundColor = 'steelblue';
-    a4.style.backgroundColor = 'steelblue';
+    a1.style.backgroundColor = 'blueviolet';
+    a2.style.backgroundColor = 'blueviolet';
+    a3.style.backgroundColor = 'blueviolet';
+    a4.style.backgroundColor = 'blueviolet';
+
+    imgDiv.style.display = 'none';
 
     // set a question listener
     gameRef.child('question').on('value', (snapshot) => {updateQ(snapshot)});
@@ -87,32 +90,29 @@ function updateQ(snapshot) {
     else {
         statusLabel.innerHTML = snapshot.val().text;
         qindex = snapshot.val().num;
+        a1.style.backgroundColor = 'blueviolet';
+        a2.style.backgroundColor = 'blueviolet';
+        a3.style.backgroundColor = 'blueviolet';
+        a4.style.backgroundColor = 'blueviolet';
+        a1.disabled = false;
+        a2.disabled = false;
+        a3.disabled = false;
+        a4.disabled = false;
+
         // turn on the correct number of buttons
         if (snapshot.val().ans == 2) {
-            a1.style.backgroundColor = 'steelblue';
-            a2.style.backgroundColor = 'steelblue';
-            a3.style.backgroundColor = 'steelblue';
-            a4.style.backgroundColor = 'steelblue';
             a1.style.display = 'inline-block';
             a2.style.display = 'inline-block';
             a3.style.display = 'none';
             a4.style.display = 'none';
         }
         if (snapshot.val().ans == 3) {
-            a1.style.backgroundColor = 'steelblue';
-            a2.style.backgroundColor = 'steelblue';
-            a3.style.backgroundColor = 'steelblue';
-            a4.style.backgroundColor = 'steelblue';
             a1.style.display = 'inline-block';
             a2.style.display = 'inline-block';
             a3.style.display = 'inline-block';
             a4.style.display = 'none';
         }
         if (snapshot.val().ans == 4) {
-            a1.style.backgroundColor = 'steelblue';
-            a2.style.backgroundColor = 'steelblue';
-            a3.style.backgroundColor = 'steelblue';
-            a4.style.backgroundColor = 'steelblue';
             a1.style.display = 'inline-block';
             a2.style.display = 'inline-block';
             a3.style.display = 'inline-block';
@@ -120,8 +120,6 @@ function updateQ(snapshot) {
         }
     }
 }
-
-// THESE NOW NEED TO CREATE A RESPONSE OBJECT AND POST IT
 
 a1.addEventListener('click', (ev) => {
     if (qindex != -1) {
@@ -131,13 +129,13 @@ a1.addEventListener('click', (ev) => {
         // record this response in the responses list
         gameRef.child('responses').push(response);
 
-        // response entered - disable the buttons
-        ev.target.style.backgroundColor = 'red';
+        // response entered - mark response & disable the buttons
+        ev.target.style.backgroundColor = 'navy';
 
-        //let buttons = answers.children;
-        //for (let i=0; i<buttons.length; i++) {
-        //    buttons[i].firstChild.disabled = 'true';
-        //}
+        a1.disabled = true;
+        a2.disabled = true;
+        a3.disabled = true;
+        a4.disabled = true;
     }
 });
 
@@ -149,13 +147,13 @@ a2.addEventListener('click', (ev) => {
         // record this response in the responses list
         gameRef.child('responses').push(response);
 
-        // response entered - disable the buttons
-        ev.target.style.backgroundColor = 'red';
+        // response entered - mark response & disable the buttons
+        ev.target.style.backgroundColor = 'navy';
 
-        //let buttons = answers.children;
-        //for (let i=0; i<buttons.length; i++) {
-        //    buttons[i].firstChild.disabled = 'true';
-        //}
+        a1.disabled = true;
+        a2.disabled = true;
+        a3.disabled = true;
+        a4.disabled = true;
     }
 });
 
@@ -167,13 +165,13 @@ a3.addEventListener('click', (ev) => {
         // record this response in the responses list
         gameRef.child('responses').push(response);
 
-        // response entered - disable the buttons
-        ev.target.style.backgroundColor = 'red';
+        // response entered - mark response & disable the buttons
+        ev.target.style.backgroundColor = 'navy';
 
-        //let buttons = answers.children;
-        //for (let i=0; i<buttons.length; i++) {
-        //    buttons[i].firstChild.disabled = 'true';
-        //}
+        a1.disabled = true;
+        a2.disabled = true;
+        a3.disabled = true;
+        a4.disabled = true;
     }
 });
 
@@ -185,12 +183,12 @@ a4.addEventListener('click', (ev) => {
         // record this response in the responses list
         gameRef.child('responses').push(response);
 
-        // response entered - disable the buttons
-        ev.target.style.backgroundColor = 'red';
+        // response entered - mark response & disable the buttons
+        ev.target.style.backgroundColor = 'navy';
 
-        //let buttons = answers.children;
-        //for (let i=0; i<buttons.length; i++) {
-        //    buttons[i].firstChild.disabled = 'true';
-        //}
+        a1.disabled = true;
+        a2.disabled = true;
+        a3.disabled = true;
+        a4.disabled = true;
     }
 });

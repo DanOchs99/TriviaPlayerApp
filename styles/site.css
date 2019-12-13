@@ -1,15 +1,52 @@
+* {
+    margin: 0;
+  }
+
 body {
-    font-size: 40px;
+    background: linear-gradient(blueviolet, black);
+    font-family: "Roboto", sans-serif;
+    font-size: 3vh;
+    color: #fff;
+}
+
+#image-div {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+img {
+    width: 75%;
+    margin: 5px 0px 25px 0px;
+}
+
+#pin-div {
+    display: flex;
+    width: 100vw;
+    margin-left: 10px;
+}
+
+#name-div {
+    display: flex;
+    width: 100vw;
+    margin-left: 10px;
+}
+
+#status-div {
+    display: flex;
+    width: 100vw;
+    margin: 5px 10px 5px 10px;
 }
 
 input {
-    font-size: 40px;
+    font-size: 3vh;
 }
 
 button {
-    font-size: 40px;
-    color: white;
-    background-color: steelblue;
+    font-size: 3vh;
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
     border-radius: 5px;
     padding: 10px 30px 10px 30px;
     margin: 10px;
